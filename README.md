@@ -19,3 +19,10 @@ Steps to run the app.
 1. Activate the virtual environment by running "source flask_env/bin/activate".
 2. Then run "pip install -r requirements.txt" to install the relevent packages.
 3. Change the database information in "settings.py"
+
+Application screenshots are available in the root directory as following files:
+
+1. Dashboard.png
+2. Login Page.png
+3. Create Account.png
+
