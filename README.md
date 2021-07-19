@@ -1,4 +1,4 @@
-# MojhiAssignment
+# Mojhi Assignment
 
 1. This is a Login and Logout app made with Python, Flask and MongoDb.
 2. "flask_env" is the virtual environment I created inside which I have created this app.
