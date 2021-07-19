@@ -1,0 +1,52 @@
+<!-- This is the HTML for the "Create account" page. -->
+
+{% extends "base.html" %} {% block content %}
+
+<div class="card-wrapper">
+    <div class="card">
+        <h1 class="center">Create Account</h1>
+        <form name="signup_form">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="field" required>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" class="field" required>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" class="field" required>
+            <div class="pass_instructions">
+                Conditions for a valid password are:
+                </br>
+                <ul>
+                    <li>Should have at least one number.</li>
+                    <li>Should have at least one uppercase and one lowercase character.</li>
+                    <li>Should have at least one special symbol.</li>
+                    <li>Should be between 6 to 20 characters long.</li>
+                </ul>
+            </div>
+            <p class="error error-hidden"></p>
+            <input type="submit" class="btn btn-primary" value="Submit" class="btn">
+            <div class="center">
+                <a class="redirect_hrefs" href="/">Already a User?</a>
+            </div>
+        </form>
+
+        <div class="modal" id="success-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Account creation success</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>Your account was created succesfully.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="success_redirect_btn" class="btn btn-success" data-dismiss="modal">Go to Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
