@@ -7,6 +7,7 @@ for the frontend and JS and Ajax for funtionality.
 """
 
 from flask import Flask, render_template, redirect, session
+
 from functools import wraps
 from user.models import User
 
@@ -80,7 +81,10 @@ def loginform():
     User can either login in to the dashboard or
         go on tpo create a new account
     """
-    return render_template('login.html')
+    if not session.get("logged_in"):
+        return render_template('login.html')
+    else:
+        return render_template('dashboard.html')
 
 # Route to create account.
 
@@ -92,7 +96,10 @@ def home():
     Output: Redirected if the credentials or valid, If not 
         error message appears
     """
-    return render_template('home.html')
+    if not session.get("logged_in"):
+        return render_template('create_account.html')
+    else:
+        return render_template('dashboard.html')
 
 # Route to dashboard. Dashboard cannot be accessed without logging in.
 
